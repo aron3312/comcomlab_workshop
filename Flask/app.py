@@ -10,6 +10,7 @@ app = Flask(__name__)
 with open('data.json', 'r', encoding='utf-8') as f:
     judgement_data = json.load(f)
 
+money_no = [(judge['_source']['no'], parse_money(judge['_source']['mainText'].replace('仟', '千'))) for judge in judgement_data if parse_money(judge['_source']['mainText'])]
 
 @app.route('/')
 def index():
@@ -40,7 +41,7 @@ def index():
     graphJSON = json.dumps(graphs, cls=py.utils.PlotlyJSONEncoder)
 
     # 回傳序列化後的資料以及當初處理好的數據
-    return render_template('index.html', graphJSON=graphJSON, court_count=court_count)
+    return render_template('index.html', graphJSON=graphJSON, court_count=money_no)
 
 
 if __name__ == '__main__':
