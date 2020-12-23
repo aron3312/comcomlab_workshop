@@ -17,3 +17,11 @@
 * 一是針對這兩項(Flask、Elasticsearch)進行簡單介紹，及基本操作介紹。
 * 二是針對大家對於裁判書的解析，進一步的想法；會需要知道主要是因為透過各位進一步的構想，我能在這兩周提供各位如何快速開發出來的具體建議，以及操作上的教學
 
+## 2020/12/23
+
+本次主要針對初步的主題進行小的demo，結合elasticsearch + flask + javascript，達成公然污辱罪的基本分析
+
+* 針對公然污辱的資料爬取script sample
+* 在flask上的資料傳輸(預先load以及即時load)
+* 基本的文字pattern解析
+* 結合plotly以及javascript的簡單視覺化

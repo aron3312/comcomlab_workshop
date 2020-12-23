@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+<style>
+    table{
+  width: 500px;
+  height: 250px;
+  border: 1px solid #f00;
+  margin: auto;
+}
+table td{
+  vertical-align: middle;
+  text-align: center;
+}
+
+</style>
+    <div>
+        <div id="graph-1"></div>
+        <table>
+            <thead>
+            <th>法院</th>
+            <th>公然污辱罪次數</th>
+            </thead>
+        {% for court, value in court_count %}
+        <tr>
+            <td>{{ court }}</td>
+            <td>{{ value }}</td>
+        </tr>
+        {% endfor %}
+        </table>
+    </div>
+    <!-- Latest compiled and minified plotly.js JavaScript -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script type="text/javascript">
+        var graphs = {{ graphJSON|safe }};
+        Plotly.plot("graph-1",
+            graphs[0].data,
+            graphs[0].layout || {});
+    </script>
+
+</body>
+</html>

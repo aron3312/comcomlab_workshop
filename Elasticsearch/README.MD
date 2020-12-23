@@ -22,3 +22,30 @@ Elasticsearch簡單來說，是一套開源式的分散式搜尋引擎。搜尋�
 python的elasticsearch client，其實透過python，去進行API的request。
 
 這部分其實可以透過自己撰寫，或是利用別人寫好的[套件](https://elasticsearch-py.readthedocs.io/en/7.10.0/)
+
+
+### Create index
+
+<pre>
+from elasticsearch import Elasticsearch
+
+hosts = "elasticsearch位置"
+es = Elasticsearch(hosts)
+index_name = "news_database"
+ex.indices.create(index_name)
+</pre>
+
+### index data
+
+<pre>
+from elasticsearch import Elasticsearch
+
+hosts = "elasticsearch位置"
+es = Elasticsearch(hosts)
+index_name = "news_database"
+doc = {"name":Aron, "age":2}
+es.index(index_name, body=doc)
+
+</pre>
+
+### Bulk index

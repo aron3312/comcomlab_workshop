@@ -32,3 +32,9 @@ def hello():
 if __name__ == '__main__':
     app.run()
 </pre>
+
+
+## Plotly-js + Flask
+
+透過運用python的視覺化套件，結合js版本，不需要自己撰寫javascript，即可簡單的將數據分析視覺化結合至flask上
+
